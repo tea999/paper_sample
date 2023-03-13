@@ -6,6 +6,8 @@ export function useSdk() {
     const [sdk, setSdk] = useState<PaperEmbeddedWalletSdk>()
 
     useEffect(() => {
+
+        console.log(`key:${process.env.NEXT_PUBLIC_KEY}`)
         const sdk = new PaperEmbeddedWalletSdk({
             clientId: process.env.NEXT_PUBLIC_KEY!,
             chain: "Goerli"
